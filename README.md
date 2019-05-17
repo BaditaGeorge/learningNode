@@ -1,0 +1,2 @@
+# learningNode
+Some exercises
