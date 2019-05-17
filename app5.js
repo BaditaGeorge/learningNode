@@ -1,7 +1,6 @@
 const fs = require('fs');
 const readStream = fs.createReadStream('app.js','utf8');
 const writeStream = fs.createWriteStream('arhiva.txt');
-//readStream.pipe(writeStream);
 var p = "";
 var dist = [];
 var arr = [];
@@ -22,13 +21,11 @@ readStream.on('data',(chunk)=>{
 			p += c;
 		}
 		else{
-			//console.log(code);
 			arr.push(dist[p]);
 			dist[p+c] = code;
 			code += 1;
 			writeStream.write(arr[index].toString()+'\n');
 			index += 1;
-			//console.log(arr);
 			p = c;
 		}
 		c = "";
